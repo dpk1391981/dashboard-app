@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const path = require("path");
 const session = require("express-session");
 const cors = require("cors");
 require("dotenv").config();
@@ -31,7 +30,8 @@ const connectDB = require("./config/db");
 
 app.use(
   cors({
-    origin: ["*"],
+    AccessControlAllowOrigin: "*",
+    origin: "*",
     methods: "GET,POST,PUT,DELETE,OPTIONS",
   }),
 );
