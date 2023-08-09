@@ -6,6 +6,7 @@ let mongoURI = process.env.NODE_ENV == "production" ? db["production"] : db["loc
 
 console.log(`mongoURI`);
 console.log(mongoURI);
+console.log(`process.env.NODE_ENV`);
 console.log(process.env.NODE_ENV);
 const connectDB = async () => {
   try {
