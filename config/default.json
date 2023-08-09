@@ -1,7 +1,7 @@
 {
     "mongoURI": {
         "local": "mongodb://localhost/venture_db",
-        "production": "mongodb+srv://dpk1391981:dpk1391981@dev-cluster-mern.o8ybg.mongodb.net/mern_db?retryWrites=true&w=majority"
+        "production": "mongodb+srv://dpk1391981:dpk1391981@cluster0.ioiqmq2.mongodb.net/?retryWrites=true&w=majority"
     },
     "gitHubCred": {
         "client_id": "Iv1.aead702f125bb95e",
