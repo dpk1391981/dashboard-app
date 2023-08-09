@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "64cf613b092be9b23f481aa3"
+  },
+  "title": "Campaign",
+  "state": "active",
+  "alias": "campaign"
+},
+{
+  "_id": {
+    "$oid": "64cf6647092be9b23f481aa4"
+  },
+  "title": "Pie Chart",
+  "state": "active",
+  "alias": "pie_chart"
+},
+{
+  "_id": {
+    "$oid": "64cf6678092be9b23f481aa5"
+  },
+  "title": "Earnings",
+  "state": "active",
+  "alias": "earnings"
+},
+{
+  "_id": {
+    "$oid": "64cf6688092be9b23f481aa6"
+  },
+  "title": "Graph Chart",
+  "state": "active",
+  "alias": "graph_chart"
+}]

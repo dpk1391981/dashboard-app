@@ -1,0 +1,100 @@
+POST http://localhost:5000/api/users HTTP/1.1
+content-type: application/json
+
+{
+    "name": "test",
+    "email": "test.kumar@instant.com",
+    "password": "dpk@1391981"
+}
+###
+POST http://localhost:5000/api/auth HTTP/1.1
+content-type: application/json
+
+{
+    "email": "sandeep.kumar@instant.com",
+    "password": "dpk@1391981"
+}
+###
+POST http://localhost:5000/api/profile HTTP/1.1
+content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY3ODE4ZmFjYmFhY2QyZDU1YWY2OGJhIn0sImlhdCI6MTYwMTc5NzQyNCwiZXhwIjoxNjAyMTU3NDI0fQ.oVipafW6rmb29K6_siIdG4wTyyY7zv-njV-CaQ4yGkA
+
+{
+    "company": "Instant System Inc.",
+    "status": "Developer",
+    "skills": "HTML, PHP, Node js, Ruby,React",
+    "website": "https://mongoosejs.com/docs/populate.html",
+    "location": "Noida",
+    "bio": "Hey!! I am Product Manager",
+    "githubusername": "sandeeprepo",
+    "youtube": "https://youtube.com/sandeeprepo",
+    "facebook": "https://facebook.com/sandeeprepo",
+    "instagram": "https://instagram.com/sandeeprepo",
+    "twitter": "https://twitter.com/sandeeprepo",
+    "linkedin": "https://linkedin.com/sandeeprepo"
+}
+
+###
+PUT  http://localhost:5000/api/profile/experience HTTP/1.1
+content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY2ZjBjMjU1ZTQ4MTIzY2ZlYWVhZWI3In0sImlhdCI6MTYwMTExMzIyNCwiZXhwIjoxNjAxNDczMjI0fQ.yLaceJuWk7cnlcp7vH4N7oSbkeLZZVTQiWCV6fV0exM
+
+{
+    "title": "Developer",
+    "company": "Test2234 System Inc.",
+    "location": "Noida",
+    "from": "07-09-2017",
+    "current": "true",
+    "description": "Handle product and team"
+    
+}
+
+###
+PUT  http://localhost:5000/api/profile/education HTTP/1.1
+content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWZmOTk1ZDBmZGJlMzZkNmJjNjA5N2FkIn0sImlhdCI6MTYxMDE5MjMzNiwiZXhwIjoxNjEwNTUyMzM2fQ.JBtR6NT93Xgv44rCB3lILTEgAWi6MSSEMOmwtkUJNZM
+
+{
+    "school": "RPVV Link Road",
+    "degree": "Diploma1",
+    "fieldofstudy": "Engineer",
+    "from": "07-09-2017",
+    "current": "true",
+    "description": "Handle product and team"
+    
+}
+###
+
+POST http://localhost:5000/api/posts HTTP/1.1
+content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY2ZjBjMjU1ZTQ4MTIzY2ZlYWVhZWI3In0sImlhdCI6MTYwMTExMzIyNCwiZXhwIjoxNjAxNDczMjI0fQ.yLaceJuWk7cnlcp7vH4N7oSbkeLZZVTQiWCV6fV0exM
+
+{
+    "text": "This is new 1234534"
+}
+###
+
+PUT  http://localhost:5000/api/posts/like/5f703d6ee047c841401bb476 HTTP/1.1 HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY2ZjBjMjU1ZTQ4MTIzY2ZlYWVhZWI3In0sImlhdCI6MTYwMTExMzIyNCwiZXhwIjoxNjAxNDczMjI0fQ.yLaceJuWk7cnlcp7vH4N7oSbkeLZZVTQiWCV6fV0exM
+###
+
+PUT  http://localhost:5000/api/posts/dislike/5f703d6ee047c841401bb476 HTTP/1.1 HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY2ZjBjMjU1ZTQ4MTIzY2ZlYWVhZWI3In0sImlhdCI6MTYwMTExMzIyNCwiZXhwIjoxNjAxNDczMjI0fQ.yLaceJuWk7cnlcp7vH4N7oSbkeLZZVTQiWCV6fV0exM
+###
+POST http://localhost:5000/api/posts/comment/5f703d6ee047c841401bb476 HTTP/1.1
+content-type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY2ZjBjMjU1ZTQ4MTIzY2ZlYWVhZWI3In0sImlhdCI6MTYwMTExMzIyNCwiZXhwIjoxNjAxNDczMjI0fQ.yLaceJuWk7cnlcp7vH4N7oSbkeLZZVTQiWCV6fV0exM
+
+{
+    "text": "Removing...ssss."
+}
+
+###
+
+
+POST http://localhost:5000/api/social/google HTTP/1.1
+content-type: application/json
+
+{
+    "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImZkNDhhNzUxMzhkOWQ0OGYwYWE2MzVlZjU2OWM0ZTE5NmY3YWU4ZDYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI1MTQwNDgwNDAxNzItMHJjMG5uYWFjNXBjbjdnaHRsc3JycHBtZTFtcDUycDMuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI1MTQwNDgwNDAxNzItMHJjMG5uYWFjNXBjbjdnaHRsc3JycHBtZTFtcDUycDMuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDAyNDg0MTg3NzA1NjYyNTY2ODYiLCJlbWFpbCI6ImRwazEzOTE5ODFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTY5MTA4MTUzOCwibmFtZSI6IkRlZXBhayBLdW1hciIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQWNIVHRjSHRwakhMVkZpamZUdHFub3hxZUZsc1hBMWFvWHU0S1RxSnlMY19GY1FBT0VIPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkRlZXBhayIsImZhbWlseV9uYW1lIjoiS3VtYXIiLCJsb2NhbGUiOiJlbiIsImlhdCI6MTY5MTA4MTgzOCwiZXhwIjoxNjkxMDg1NDM4LCJqdGkiOiI3ZDNkZTliMzhlNjBhNTBkZjRhY2ZiYTdhOTdmNTEyYzcwMDI4MTI0In0.NcAmGSEDvE8K1DmNiLeCN8GG9GooLTVT3LyZ1aHuRngOMLDMM3L03RpctOqffOCIMix4ZIq9NX9B1Z_ugIjhoNGSYP94Mh9vcuv75_w3nKeUR84FiABROXsuEw4LM1PD32NvvOT1vK0_c9smM1aVRtWvlVmUfPFkBXXCCh9atDNrhnYvZmGCrigtugYfQOB6BGVq16tQ3SbVXKy1PnllUD9vIdN8zL5PODrYFEKhkq96TncolRsewR1uXMV558eInnB5qoMwezUj7zzkckjG8jo7vscamsJMLD1xR7deQ3LAsngIP_fJN_2OwQqN00lj-6IsoUUNjbJGbvWPLQdHww"
+}

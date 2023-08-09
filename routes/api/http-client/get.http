@@ -1,0 +1,32 @@
+GET http://localhost:5000/api/auth HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY2ZjBjMjU1ZTQ4MTIzY2ZlYWVhZWI3In0sImlhdCI6MTYwMTExMzIyNCwiZXhwIjoxNjAxNDczMjI0fQ.yLaceJuWk7cnlcp7vH4N7oSbkeLZZVTQiWCV6fV0exM
+###
+GET http://localhost:5000/api/profile/me HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY2ZjBjMjU1ZTQ4MTIzY2ZlYWVhZWI3In0sImlhdCI6MTYwMTExMzIyNCwiZXhwIjoxNjAxNDczMjI0fQ.yLaceJuWk7cnlcp7vH4N7oSbkeLZZVTQiWCV6fV0exM
+
+###
+GET  http://localhost:5000/api/profile HTTP/1.1
+###
+GET  http://localhost:5000/api/profile/user/5f6edf8ac81ce85592786aa1 HTTP/1.1
+###
+
+GET http://localhost:5000/api/profile/github/dpk1391981 HTTP/1.1
+###
+GET http://localhost:5000/api/posts HTTP/1.1 HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY2ZjBjMjU1ZTQ4MTIzY2ZlYWVhZWI3In0sImlhdCI6MTYwMTExMzIyNCwiZXhwIjoxNjAxNDczMjI0fQ.yLaceJuWk7cnlcp7vH4N7oSbkeLZZVTQiWCV6fV0exM
+###
+GET http://localhost:5000/api/posts/5f703314bfe3c92852d33b6a HTTP/1.1 HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY2ZjBjMjU1ZTQ4MTIzY2ZlYWVhZWI3In0sImlhdCI6MTYwMTExMzIyNCwiZXhwIjoxNjAxNDczMjI0fQ.yLaceJuWk7cnlcp7vH4N7oSbkeLZZVTQiWCV6fV0exM
+###
+
+
+###
+GET http://localhost:5000/api/social/google HTTP/1.1
+
+###
+GET http://localhost:5000/api/widget HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjZDNhZjYyMTRiOWY5ZjAzOGEwMGFlIn0sImlhdCI6MTY5MTIyMDYyMywiZXhwIjoxNjkxNTgwNjIzfQ._UxBUTinoZ60W9N3zzrcBq0Ix6LJCu64CYAaI2oa4a4
+
+####
+GET http://localhost:5000/api/users HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjZDNhZjYyMTRiOWY5ZjAzOGEwMGFlIn0sImlhdCI6MTY5MTIyMDYyMywiZXhwIjoxNjkxNTgwNjIzfQ._UxBUTinoZ60W9N3zzrcBq0Ix6LJCu64CYAaI2oa4a4
