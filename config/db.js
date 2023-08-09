@@ -2,9 +2,10 @@ const mongoose = require("mongoose");
 const config = require("config");
 const db = config.get("mongoURI");
 
-let mongoURI =
-  process.env.NODE_ENV == "production" ? db["production"] : db["local"];
+let mongoURI = process.env.NODE_ENV == "production" ? db["production"] : db["local"];
 
+console.log(`mongoURI`);
+console.log(mongoURI);
 const connectDB = async () => {
   try {
     await mongoose.connect(mongoURI, {
