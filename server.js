@@ -3,6 +3,8 @@ const app = express();
 const path = require("path");
 const session = require("express-session");
 const cors = require("cors");
+require("dotenv").config();
+
 const ROUTES = {
   users: require("./routes/api/users"),
   auth: require("./routes/api/auth"),
