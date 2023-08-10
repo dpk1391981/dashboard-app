@@ -5,9 +5,11 @@ const session = require("express-session");
 const User = require("../../models/User");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
+const APP_URL = config.get("APP_URL");
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
+const __URL = process.env.NODE_ENV == "production" ? APP_URL["production"] : APP_URL["local"];
 
 app.use(
   session({
@@ -115,7 +117,7 @@ router.get(
         // window.localStorage.setItem("token", token);
         const now = new Date();
         const ttl = now.getTime() + 30000;
-        res.redirect("http://localhost:3000/authentication?token=" + token + "&expireIn=" + ttl);
+        res.redirect(__URL + "/authentication?token=" + token + "&expireIn=" + ttl);
       },
     );
   },
