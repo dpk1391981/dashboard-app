@@ -37,6 +37,8 @@ const config = require("config");
  * @access Public
  */
 
+console.log(`GOOGLE_CLIENT_ID`, GOOGLE_CLIENT_ID);
+console.log(`GOOGLE_CLIENT_SECRET`, GOOGLE_CLIENT_SECRET);
 passport.use(
   new GoogleStrategy(
     {
