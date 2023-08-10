@@ -5,6 +5,7 @@ const session = require("express-session");
 const User = require("../../models/User");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
+const config = require("config");
 const APP_URL = config.get("APP_URL");
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
