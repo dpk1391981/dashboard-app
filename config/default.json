@@ -11,5 +11,9 @@
     "APP_URL": {
         "local": "http://localhost:3000",
         "production": "https://dev-mike.imdeepak.in"
+    },
+    "API_URL": {
+        "local": "http://localhost:500",
+        "production": "https://api-dev.imdeepak.in/venture/api/auth"
     }
 }

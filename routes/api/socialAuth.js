@@ -7,10 +7,12 @@ const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 const config = require("config");
 const APP_URL = config.get("APP_URL");
+const API_URL = config.get("API_URL");
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 const __URL = process.env.NODE_ENV == "production" ? APP_URL["production"] : APP_URL["local"];
+const __API_URL = process.env.NODE_ENV == "production" ? API_URL["production"] : API_URL["local"];
 
 app.use(
   session({
@@ -46,7 +48,7 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "/api/social/google/callback",
+      callbackURL: __API_URL + "/api/social/google/callback",
     },
     async (request, accessToken, refreshToken, profile, done) => {
       try {
