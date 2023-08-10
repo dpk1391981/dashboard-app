@@ -32,7 +32,6 @@ passport.deserializeUser(function (obj, cb) {
 });
 
 const jwt = require("jsonwebtoken");
-const config = require("config");
 
 /**
  * @route POST api/auth
