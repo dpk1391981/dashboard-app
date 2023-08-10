@@ -14,6 +14,6 @@
     },
     "API_URL": {
         "local": "http://localhost:500",
-        "production": "https://api-dev.imdeepak.in/venture/api/auth"
+        "production": "https://api-dev.imdeepak.in/venture/"
     }
 }
