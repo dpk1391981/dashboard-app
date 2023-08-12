@@ -37,10 +37,7 @@ router.post(
   "/",
   [
     auth,
-    [
-      body("status", "Status is required!").not().isEmpty(),
-      body("skills", "Skills is required!").not().isEmpty(),
-    ],
+    [body("status", "Status is required!").not().isEmpty(), body("skills", "Skills is required!").not().isEmpty()],
   ],
   async (req, res) => {
     try {
@@ -86,11 +83,7 @@ router.post(
       let profile = await Profile.findOne({ user: req.user.id });
       if (profile) {
         //update
-        profile = await Profile.findOneAndUpdate(
-          { user: req.user.id },
-          { $set: profileFields },
-          { new: true }
-        );
+        profile = await Profile.findOneAndUpdate({ user: req.user.id }, { $set: profileFields }, { new: true });
 
         return res.json(profile);
       }
@@ -103,7 +96,7 @@ router.post(
       console.error(error);
       res.status(500).send("Server Error!!!");
     }
-  }
+  },
 );
 
 /**
@@ -114,11 +107,7 @@ router.post(
 
 router.get("/", async (req, res) => {
   try {
-    let profile = await Profile.find()
-      .populate("user", ["name", "avatar"])
-      .lean()
-      .sort({ createdAt: -1 })
-      .exec();
+    let profile = await Profile.find().populate("user", ["name", "avatar"]).lean().sort({ createdAt: -1 }).exec();
     if (!profile) {
       res.status(404).json({ msg: "No user found!!!" });
     }
@@ -138,10 +127,7 @@ router.get("/", async (req, res) => {
 router.get("/user/:user_id", async (req, res) => {
   try {
     let userId = req.params.user_id;
-    let profile = await Profile.findOne({ user: userId })
-      .populate("user", ["name", "avatar"])
-      .lean()
-      .exec();
+    let profile = await Profile.findOne({ user: userId }).populate("user", ["name", "avatar"]).lean().exec();
     if (!profile) {
       res.status(404).json({ msg: "No user found!!!" });
     }
@@ -199,15 +185,7 @@ router.put(
       if (!errors.isEmpty()) {
         res.status(400).json({ errors: errors.array() });
       }
-      const {
-        title,
-        company,
-        from,
-        location,
-        to,
-        current,
-        description,
-      } = req.body;
+      const { title, company, from, location, to, current, description } = req.body;
 
       const newExp = {
         title,
@@ -227,7 +205,7 @@ router.put(
       console.error(error.message);
       res.status(500).send("Server Error!!!");
     }
-  }
+  },
 );
 
 /**
@@ -239,9 +217,7 @@ router.put(
 router.delete("/experience/:exp_id", auth, async (req, res) => {
   try {
     let profile = await Profile.findOne({ user: req.user.id });
-    let removeIndex = profile.experience
-      .map((exp) => exp.id)
-      .indexOf(req.params.exp_id);
+    let removeIndex = profile.experience.map((exp) => exp.id).indexOf(req.params.exp_id);
 
     profile.experience.splice(removeIndex, 1);
     await profile.save();
@@ -276,15 +252,7 @@ router.put(
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
       }
-      const {
-        school,
-        degree,
-        fieldofstudy,
-        from,
-        to,
-        current,
-        description,
-      } = req.body;
+      const { school, degree, fieldofstudy, from, to, current, description } = req.body;
 
       const newEducation = {
         school,
@@ -304,7 +272,7 @@ router.put(
       console.error(error.message);
       res.status(500).send("Server Error!!!");
     }
-  }
+  },
 );
 
 /**
@@ -316,9 +284,7 @@ router.put(
 router.delete("/education/:edu_id", auth, async (req, res) => {
   try {
     let profile = await Profile.findOne({ user: req.user.id });
-    let removeIndex = profile.education
-      .map((exp) => exp.id)
-      .indexOf(req.params.exp_id);
+    let removeIndex = profile.education.map((exp) => exp.id).indexOf(req.params.exp_id);
 
     profile.education.splice(removeIndex, 1);
     await profile.save();

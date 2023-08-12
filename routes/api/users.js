@@ -23,6 +23,8 @@ router.get("/", auth, async (req, res) => {
       "mobileNumber",
       "status",
       "email_verified",
+      "isSuperAdmin",
+      "role",
     ]);
     res.json(user);
   } catch (error) {
@@ -101,6 +103,42 @@ router.post(
       );
     } catch (error) {
       console.log(`Error @register user: ${error.message}`);
+      res.status(500).send("Server Error");
+    }
+  },
+);
+
+router.put(
+  "/profile/update",
+  [
+    body("fullName", "Full name is required!!!").not().isEmpty(),
+    body("email", "Please include a validate email address!!!").isEmail(),
+  ],
+  async (req, res) => {
+    try {
+      const error = validationResult(req);
+      if (!error.isEmpty()) {
+        return res.status(400).json({ errors: error.array() });
+      }
+
+      const { body } = req;
+      const { password, _id } = body;
+
+      if (password) {
+        const salt = await bcrypt.genSalt(10);
+        body["password"] = await bcrypt.hash(password, salt);
+      }
+
+      body["isAgree"] = true;
+      let user = await User.findByIdAndUpdate(_id, body);
+
+      if (!user) {
+        return res.status(400).json({ errors: [{ msg: "Invalid user!" }] });
+      }
+
+      res.json({ user });
+    } catch (error) {
+      console.log(`Error @update user profile: ${error.message}`);
       res.status(500).send("Server Error");
     }
   },

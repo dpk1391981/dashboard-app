@@ -52,7 +52,7 @@ router.post(
         return res.status(400).json({ errors: [{ msg: "Invalid Credentials" }] });
       }
 
-      if (user["auth_type"] === "mannual") {
+      if (user.password || user["auth_type"] === "mannual") {
         const isMatch = await bcrypt.compare(password, user.password);
         console.log(isMatch);
         if (!isMatch) {

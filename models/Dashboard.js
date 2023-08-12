@@ -18,7 +18,13 @@ const DashboardSchema = new Schema({
       type: String,
     },
   },
-  user: {
+  associated_user: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "user",
+    },
+  ],
+  root_user: {
     type: Schema.Types.ObjectId,
     ref: "user",
   },
@@ -36,6 +42,11 @@ const DashboardSchema = new Schema({
     default: "active",
   },
   favourite: { type: Boolean, default: false },
+  role_access: {
+    type: String,
+    enum: ["FULL_ACCESS", "VIEW", "CREATE", "EDIT"],
+    default: "FULL_ACCESS",
+  },
 });
 
 module.exports = Dashboard = mongoose.model("dashboard", DashboardSchema);

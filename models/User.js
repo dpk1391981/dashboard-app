@@ -10,6 +10,7 @@ const UserSchema = new Schema({
   avatar: { type: String },
   createdAt: { type: Date, default: Date.now },
   email_verified: { type: Boolean, default: false },
+  company: { type: String },
   auth_type: {
     type: String,
     enum: ["google", "facebook", "twitter", "mannual"],
@@ -26,6 +27,12 @@ const UserSchema = new Schema({
     type: String,
     enum: ["LOGIN", "REGISTER"],
     default: "REGISTER",
+  },
+  isSuperAdmin: { type: Boolean, default: false },
+  role: {
+    type: String,
+    enum: ["ADMIN", "SUPER_ADMIN", "USER"],
+    default: "ADMIN",
   },
 });
 

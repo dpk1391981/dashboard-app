@@ -13,7 +13,7 @@
         "production": "https://dev-mike.imdeepak.in"
     },
     "API_URL": {
-        "local": "http://localhost:500",
+        "local": "http://localhost:5000",
         "production": "https://api-dev.imdeepak.in/venture"
     }
 }
