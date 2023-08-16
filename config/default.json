@@ -15,5 +15,9 @@
     "API_URL": {
         "local": "http://localhost:5000",
         "production": "https://api-dev.imdeepak.in/venture"
+    },
+    "FACEBOOK_CRED": {
+        "app_id": "721146829842062",
+        "app_secret": "05ec174bdd715d44964caa698ec0ebdf"
     }
 }

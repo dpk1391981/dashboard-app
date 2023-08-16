@@ -28,5 +28,10 @@ GET http://localhost:5000/api/widget HTTP/1.1
 x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjZDNhZjYyMTRiOWY5ZjAzOGEwMGFlIn0sImlhdCI6MTY5MTIyMDYyMywiZXhwIjoxNjkxNTgwNjIzfQ._UxBUTinoZ60W9N3zzrcBq0Ix6LJCu64CYAaI2oa4a4
 
 ####
-GET http://localhost:5000/api/users HTTP/1.1
+GET http://localhost:5000/api/social/facebook/callback HTTP/1.1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjZDNhZjYyMTRiOWY5ZjAzOGEwMGFlIn0sImlhdCI6MTY5MTIyMDYyMywiZXhwIjoxNjkxNTgwNjIzfQ._UxBUTinoZ60W9N3zzrcBq0Ix6LJCu64CYAaI2oa4a4
+
+###
+
+GET http://localhost:5000/api/metrics/ga/auth HTTP/1.1
 x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRjZDNhZjYyMTRiOWY5ZjAzOGEwMGFlIn0sImlhdCI6MTY5MTIyMDYyMywiZXhwIjoxNjkxNTgwNjIzfQ._UxBUTinoZ60W9N3zzrcBq0Ix6LJCu64CYAaI2oa4a4

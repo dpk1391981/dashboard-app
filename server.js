@@ -7,10 +7,12 @@ require("dotenv").config();
 const ROUTES = {
   users: require("./routes/api/users"),
   auth: require("./routes/api/auth"),
-  profile: require("./routes/api/profile"),
   social: require("./routes/api/socialAuth"),
+  fb: require("./routes/api/socialApp/facebook/auth"),
   dashboard: require("./routes/api/dashboard"),
   widget: require("./routes/api/widget"),
+  ga_metrics: require("./routes/api/socialApp/google_anaylitcs/gAnalytics"),
+  ga_oauth: require("./routes/api/socialApp/google_anaylitcs/oauth"),
 };
 
 const passport = require("passport");
@@ -49,8 +51,11 @@ app.use(express.json({ extended: false }));
 app.use("/api/users", ROUTES["users"]);
 app.use("/api/auth", ROUTES["auth"]);
 app.use("/api/social", ROUTES["social"]);
+app.use("/api/social/facebook", ROUTES["fb"]);
 app.use("/api/dashboard", ROUTES["dashboard"]);
 app.use("/api/widget", ROUTES["widget"]);
+app.use("/api/metrics/google", ROUTES["ga_metrics"]);
+app.use("/api/metrics/ga/auth", ROUTES["ga_oauth"]);
 
 //server start
 const PORT = process.env.PORT || 5000;
